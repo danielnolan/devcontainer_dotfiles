@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# this file is for installing dotfiles in devcontainer/codespace
+# this file is for installing dotfiles in devcontainer/codespace using yadm
 if [ -z "$USER" ]; then
   USER=$(id -un)
 fi
@@ -23,3 +23,5 @@ sudo apt-get install ripgrep
 sudo apt-get update
 sudo apt-get install -y yadm
 yadm clone -f https://github.com/danielnolan/dotfiles
+
+rm -rf dotfiles
