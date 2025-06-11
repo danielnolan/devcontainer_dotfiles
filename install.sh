@@ -23,5 +23,6 @@ sudo apt-get install ripgrep
 sudo apt-get update
 sudo apt-get install -y yadm
 yadm clone -f https://github.com/danielnolan/dotfiles
+yadm sparse-checkout set --no-cone '/*' '!README.md' '!LICENSE'
 
 rm -rf dotfiles
