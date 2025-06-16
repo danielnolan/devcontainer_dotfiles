@@ -27,3 +27,6 @@ yadm clone -f https://github.com/danielnolan/dotfiles
 yadm sparse-checkout set --no-cone '/*' '!README.md' '!LICENSE'
 
 rm -rf dotfiles
+
+# ensure zsh is still default shell
+sudo chsh -s $(which zsh) $USER
