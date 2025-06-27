@@ -8,7 +8,6 @@ fi
 cd $HOME
 
 # remove oh my zsh
-sudo ~/.oh-my-zsh/tools/uninstall.sh
 rm -rf .oh-my-zsh
 rm .zshrc
 rm .zprofile
