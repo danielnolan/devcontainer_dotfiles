@@ -23,8 +23,9 @@ sudo apt-get install ripgrep
 
 # Install yadm for managing dotfiles
 sudo apt-get install -y yadm
-yadm clone -f git@github.com:danielnolan/dotfiles.git
+yadm clone -f https://github.com/danielnolan/dotfiles.git
 yadm sparse-checkout set --no-cone '/*' '!README.md' '!LICENSE'
+yadm remote set-url origin git@github.com:danielnolan/dotfiles.git
 
 rm -rf dotfiles
 
