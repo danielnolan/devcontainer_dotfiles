@@ -15,10 +15,9 @@ sudo apt-get update
 
 # Install yadm for managing dotfiles
 sudo apt-get install -y yadm
-yadm clone -f https://github.com/danielnolan/dotfiles.git 
+yadm clone -f https://github.com/danielnolan/dotfiles.git --bootstrap
 yadm sparse-checkout set --no-cone '/*' '!README.md' '!LICENSE'
 yadm remote set-url origin git@github.com:danielnolan/dotfiles.git
-yadm bootstrap
 
 # remove oh my zsh if it exists in the devcontainer image
 if [ -d .oh-my-zsh ]; then
