@@ -15,6 +15,9 @@ rm .zshrc
 rm .zprofile
 rm -rf .oh-my-zsh
 
+# ensure zsh is still default shell
+sudo chsh -s $(which zsh) $USER
+
 # Update apt package cache
 sudo apt-get update
 
@@ -25,6 +28,3 @@ yadm sparse-checkout set --no-cone '/*' '!README.md' '!LICENSE'
 yadm remote set-url origin git@github.com:danielnolan/dotfiles.git
 
 rm -rf dotfiles
-
-# ensure zsh is still default shell
-sudo chsh -s $(which zsh) $USER
