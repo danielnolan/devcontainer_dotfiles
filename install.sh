@@ -7,11 +7,6 @@ fi
 
 cd $HOME
 
-# remove oh my zsh if it exists in the devcontainer image
-if [[ -d ~/.oh-my-zsh ]]; then
-  rm -rf .oh-my-zsh
-fi
-
 # Make passwordless sudo work
 export SUDO_ASKPASS=/bin/true
 
@@ -24,6 +19,12 @@ yadm clone -f https://github.com/danielnolan/dotfiles.git
 yadm sparse-checkout set --no-cone '/*' '!README.md' '!LICENSE'
 yadm remote set-url origin git@github.com:danielnolan/dotfiles.git
 yadm bootstrap
+
+# remove oh my zsh if it exists in the devcontainer image
+if [[ -d ~/.oh-my-zsh ]]; then
+  rm -rf .oh-my-zsh
+fi
+
 rm -rf dotfiles
 
 # ensure zsh is still default shell
