@@ -10,6 +10,11 @@ cd $HOME
 # Make passwordless sudo work
 export SUDO_ASKPASS=/bin/true
 
+# remove oh my zsh if it exists in the devcontainer image
+rm .zshrc
+rm .zprofile
+rm -rf .oh-my-zsh
+
 # Update apt package cache
 sudo apt-get update
 
@@ -18,13 +23,6 @@ sudo apt-get install -y yadm
 yadm clone -f https://github.com/danielnolan/dotfiles.git --bootstrap
 yadm sparse-checkout set --no-cone '/*' '!README.md' '!LICENSE'
 yadm remote set-url origin git@github.com:danielnolan/dotfiles.git
-
-# remove oh my zsh if it exists in the devcontainer image
-if [ -d .oh-my-zsh ]; then
-  rm .zshrc
-  rm .zprofile
-  rm -rf .oh-my-zsh
-fi
 
 rm -rf dotfiles
 
