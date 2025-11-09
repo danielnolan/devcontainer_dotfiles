@@ -20,9 +20,10 @@ sudo apt-get update
 
 # Install yadm for managing dotfiles
 sudo apt-get install -y yadm
-yadm clone -f https://github.com/danielnolan/dotfiles.git --bootstrap
+yadm clone -f https://github.com/danielnolan/dotfiles.git 
 yadm sparse-checkout set --no-cone '/*' '!README.md' '!LICENSE'
 yadm remote set-url origin git@github.com:danielnolan/dotfiles.git
+yadm bootstrap
 rm -rf dotfiles
 
 # ensure zsh is still default shell
