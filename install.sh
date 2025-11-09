@@ -7,8 +7,10 @@ fi
 
 cd $HOME
 
-# remove oh my zsh
-rm -rf .oh-my-zsh
+# remove oh my zsh if it exists in the devcontainer image
+if [[ -d ~/.oh-my-zsh ]]; then
+  rm -rf .oh-my-zsh
+fi
 
 # Make passwordless sudo work
 export SUDO_ASKPASS=/bin/true
