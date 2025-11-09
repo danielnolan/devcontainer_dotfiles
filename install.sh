@@ -21,7 +21,9 @@ yadm remote set-url origin git@github.com:danielnolan/dotfiles.git
 yadm bootstrap
 
 # remove oh my zsh if it exists in the devcontainer image
-if [[ -d ~/.oh-my-zsh ]]; then
+if [ -d .oh-my-zsh ]; then
+  rm .zshrc
+  rm .zprofile
   rm -rf .oh-my-zsh
 fi
 
